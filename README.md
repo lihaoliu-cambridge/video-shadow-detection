@@ -8,13 +8,14 @@ Instead of writing a lot of code for the training logic (such as data parallel o
 
 ## Requirement
 
-torch                       1.9.0
-cuda                        1.9.0
-cudnn                       11.1
-pytorch-lightning           1.5.10
-tensorboard                 2.7.0
-tensorboardX                2.5
-apex                        0.1   (download from https://github.com/NVIDIA/apex)
+cuda==11.1   
+cudnn==8.0  
+
+torch==1.9.0  
+pytorch-lightning==1.5.10  
+tensorboard==2.7.0  
+tensorboardX==2.5  
+apex==0.1   (download from https://github.com/NVIDIA/apex)  
 
 
 ## Usage
