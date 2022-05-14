@@ -1,0 +1,36 @@
+train:
+  experiment_name: &name "tvsd_visha"
+  gpus: 1  # multi-gpus setting: [0,1,2,3]
+  batch_size: 48  # for A100 GPU (80 GB)
+  max_epochs: &epochs 12
+  output_dir: "./output"
+  tb_dirname: "tensorboard"
+  num_sanity_val_steps: 0
+  accelerator: "gpu"
+  strategy: "ddp"
+  gradient_clip_val: 12
+  gradient_clip_algorithm: "norm"
+  checkpoint:
+    ckpt_dirname: "checkpoint"
+
+
+dataset:
+  dataset_name: "ViSha_tvsd" 
+  scale: 416
+  data_root: "./dataset/ViSha"
+  image_folder: "images"
+  label_folder: "labels"
+  image_ext: ".jpg"
+  label_ext: ".png"
+  test_adjacent_length: &test_adjacent_length 5
+
+
+model:
+  experiment_name: *name
+  model_name: "tvsd"
+  finetune_learning_rate: 0.00005
+  scratch_learning_rate: 0.0005
+  weight_decay: 0.0005
+  warm_up_epochs: 3
+  max_epochs: *epochs
+  test_adjacent_length: *test_adjacent_length
