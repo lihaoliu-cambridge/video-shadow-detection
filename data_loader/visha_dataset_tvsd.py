@@ -1,3 +1,4 @@
+
 import os
 import random
 import numpy as np
@@ -134,7 +135,7 @@ class ViSha_Dataset(Dataset):
                 for i in range(len(adjacent_query_list)):
                     adjacent_query_gt_list[i] = self.target_transform(adjacent_query_gt_list[i])
                 
-            sample = {'exemplar': exemplar, 'exemplar_gt': exemplar_gt, "exemplar_path": frame_path, 'exemplar_gt_path': gt_path, 'exemplar_w': w, 'exemplar_h': h, 'adjacent_length': self.adjacent_length, 'video_length': video_length}
+            sample = {'exemplar': exemplar, 'exemplar_gt': exemplar_gt, "exemplar_path": frame_path, 'exemplar_gt_path': gt_path, 'exemplar_w': w, 'exemplar_h': h, 'adjacent_length': self.test_adjacent_length, 'video_length': video_length}
 
             for i in range(len(adjacent_query_list)):
                 sample["query_{}".format(str(i))] = adjacent_query_list[i]
