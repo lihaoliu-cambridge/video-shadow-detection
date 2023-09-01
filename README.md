@@ -57,8 +57,6 @@ python train.py
 ```shell
 tensorboard --port=6006  --logdir=[Your Project Directory]/output/tensorboard/tvsd_visha
 ```
-<img src="https://github.com/lihaoliu-cambridge/lihaoliu-cambridge.github.io/blob/master/pic/papers/vsd_loss.jpg" width="480"/>  
-<img src="https://github.com/lihaoliu-cambridge/lihaoliu-cambridge.github.io/blob/master/pic/papers/vsd_visualization.png" width="960"/>  
 
 7. After training, modify the generated checkpoint file path in test.py file, and then you can test the trained model:
  
